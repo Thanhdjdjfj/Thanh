@@ -2095,13 +2095,13 @@ local RenUi = library:AddWindow("NQC SHARE",Enum.KeyCode.RightControl)
 local Main = RenUi:AddTab("Menu Farm","6026568198")
 local Combat = RenUi:AddTab("Player","7251993295")
 local Stats = RenUi:AddTab("Stats","7040410130")
-local Teleport = RenUi:AddTab("Dá»ch Chuyá»n","6035190846")
+local Teleport = RenUi:AddTab("Dịch Chuyển","6035190846")
 local Dungeon = RenUi:AddTab("Raid","7044284832")
-local DevilFruit = RenUi:AddTab("TrÃ¡i Ãc Quá»·","7044233235")
+local DevilFruit = RenUi:AddTab("Trái Ác Quỷ","7044233235")
 local Shop = RenUi:AddTab("Shop","6031265976")
-local Misc = RenUi:AddTab("TÃ­nh nÄng khÃ¡c","6034509993")
+local Misc = RenUi:AddTab("Tính năng khác","6034509993")
 --------------------------------------------------------------------
-Main:AddSeperator("HÃ£y ÄÄng KÃ½ kÃªnh vÃ  TÃ­ch chuÃ´ng Äá» xem cÃ¡c Video vá» Hack Roblox má»i:)")
+Main:AddSeperator("Hãy Đăng Ký kênh và Tích chuông để xem các Video về Hack Roblox mới:)")
 Main:AddSeperator("Settings Farm")
 
 Time = Main:AddLabel("Server Time")
@@ -2143,7 +2143,7 @@ end)
 
 Main:AddSeperator("FastAttack and Settings")
 
-Main:AddToggle("SuperFastAttack (MÃ¡y yáº¿u CÃ³ thá» bá» Lag náº¿u báº­t tÃ­nh nÄng nÃ y)",function()
+Main:AddToggle("SuperFastAttack (Máy yếu Có thể bị Lag nếu bật tính năng này)",function()
     
 local plr = game.Players.LocalPlayer
 
@@ -2243,7 +2243,7 @@ task.wait()
 end
 end)
 
-Main:AddToggle("Tá»± Äá»ng Äáº·t Äiá»m há»i sinh",true,function(value)
+Main:AddToggle("Tự động đặt điểm hồi sinh",true,function(value)
 _G.AutoSetSpawn = value
 end)
 
@@ -3106,8 +3106,8 @@ end
 end)
 end)
 
-_G.Kill_At = 25
-Main:AddSlider("Kill At %",99,100,25,function(value)
+_G.Kill_At = 100
+Main:AddSlider("Kill At %",100,100,100,function(value)
 _G.Kill_At = value
 end)
 
