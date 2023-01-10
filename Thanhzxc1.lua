@@ -2100,6 +2100,7 @@ local Dungeon = RenUi:AddTab("Raid","7044284832")
 local DevilFruit = RenUi:AddTab("Trái Ác Quỷ","7044233235")
 local Shop = RenUi:AddTab("Shop","6031265976")
 local Misc = RenUi:AddTab("Tính năng khác","6034509993")
+local Vip = RenUi:AddTab("Chức Năng Vip","6026568198")
 --------------------------------------------------------------------
 Main:AddSeperator("Hãy Follow Kênh TikTok:Thanhtran2005isme để xem các Video về Hack Roblox mới:)")
 Main:AddSeperator("Settings Farm")
@@ -2318,7 +2319,7 @@ repeat task.wait()
 EquipWeapon(_G.SelectWeapon)
 AutoHaki()
 PosMon = v.HumanoidRootPart.CFrame
-topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(v.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 v.HumanoidRootPart.CanCollide = false
 v.Humanoid.WalkSpeed = 0
 v.Head.CanCollide = false
@@ -2337,11 +2338,11 @@ end
 else
 StartMagnet = false
 if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
-topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 else
 if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 15 then
 if PosMon ~= nil then
-topos(PosMon * CFrame.new(5,10,7))
+topos(PosMon * CFrame.new(5,45,7))
 else
 if OldPos ~= nil then
 topos(OldPos.Position)
@@ -2661,6 +2662,9 @@ end
 end
 else
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
+_G.SelectWeapon = "Fishman Karate"
+wait(.1)
+_G.AutoFarm = true
 end
 end
 end
@@ -2808,7 +2812,7 @@ repeat task.wait()
 if v.Humanoid.Health <= HealthMs then
 AutoHaki()
 EquipWeapon(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
-topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(v.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 v.HumanoidRootPart.CanCollide = false
 PosMonMasteryFruit = v.HumanoidRootPart.CFrame
 v.Humanoid.WalkSpeed = 0
@@ -2818,7 +2822,7 @@ else
 UseSkill = false
 AutoHaki()
 EquipWeapon(_G.SelectWeapon)
-topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(v.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 v.HumanoidRootPart.CanCollide = false
 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 PosMonMasteryFruit = v.HumanoidRootPart.CFrame
@@ -2842,7 +2846,7 @@ StartMasteryFruitMagnet = false
 UseSkill = false
 local Mob = game:GetService("ReplicatedStorage"):FindFirstChild(Mon)
 if Mob then
-topos(Mob.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(Mob.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 else
 if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y <= 1 then
 game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true
@@ -3106,8 +3110,23 @@ end
 end)
 end)
 
-_G.Kill_At = 100
-Main:AddSlider("Phạm Vi %",100,100,100,function(value)
+_G.Kill_At = 25
+Main:AddToggle("Cày Thông Thạo  5%",5,100,25,function(value)
+_G.Kill_At = value
+end)
+
+_G.Kill_At = 25
+Main:AddToggle("Cày Thông Thạo  10%",10,100,25,function(value)
+_G.Kill_At = value
+end)
+
+_G.Kill_At = 25
+Main:AddToggle("Cày Thông Thạo  15%",15,100,25,function(value)
+_G.Kill_At = value
+end)
+
+_G.Kill_At = 25
+Main:AddToggle("Cày Thông Thạo  20%",20,100,25,function(value)
 _G.Kill_At = value
 end)
 
@@ -5884,7 +5903,7 @@ end
 end)
 end)
 
-DevilFruit:AddToggle("Auto Random Fruit",_G.Random_Auto,function(value)
+DevilFruit:AddToggle("Tự Động Random Trái Ác Quỷ",_G.Random_Auto,function(value)
 _G.Random_Auto = value
 end)
 
@@ -6181,25 +6200,25 @@ game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, goodser
 end
 end)
 
-Misc:AddSeperator("Ui")
+Misc:AddSeperator("Cửa Hàng")
 
 Misc:AddButton("Open Devil Shop",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
 game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
 end)
 
-Misc:AddButton("Open Inventory",function()
+Misc:AddButton("Mở Kho",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
 wait(1)
 game:GetService("Players").LocalPlayer.PlayerGui.Main.Inventory.Visible = true
 end)
 
-Misc:AddButton("Open Inventory Fruit",function()
+Misc:AddButton("Mở Shop Trái Ác Quỷ",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryFruits")
 game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitInventory.Visible = true
 end)
 
-Misc:AddToggle("Highlight Mode",false,function(value)
+Misc:AddToggle("Chế Độ Tối Ưu",false,function(value)
 if value == true then
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = false
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = false
@@ -6227,16 +6246,6 @@ game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = true
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = true
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = true
 end
-end)
-
-Misc:AddSeperator("Teams")
-
-Misc:AddButton("Join Pirates Team",function()
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates")
-end)
-
-Misc:AddButton("Join Marines Team",function()
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
 end)
 
 Misc:AddSeperator("Boost")
@@ -6286,31 +6295,12 @@ end)
 end
 end)
 
-Misc:AddButton("Invisible",function()
-game:GetService("Players").LocalPlayer.Character.LowerTorso:Destroy()
-end)
-
-Misc:AddButton("Click TP Tool",function()
-local plr = game:GetService("Players").LocalPlayer
-local mouse = plr:GetMouse()
-local tool = Instance.new("Tool")
-tool.RequiresHandle = false
-tool.Name = "Teleport Tool"
-tool.Activated:Connect(function()
-local root = plr.Character.HumanoidRootPart
-local pos = mouse.Hit.Position+Vector3.new(0,2.5,0)
-local offset = pos-root.Position
-root.CFrame = root.CFrame+offset
-end)
-tool.Parent = plr.Backpack
-end)
-
-Misc:AddButton("Stop All Tween",function()
+Misc:AddButton("Dừng Tất Cả Tween",function()
 topos(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 _G.Clip = false
 end)
 
-Misc:AddSeperator("Codes")
+Misc:AddSeperator("Nhập Code")
 
 local x2Code = {
 "3BVISITS",
@@ -6457,64 +6447,11 @@ end
 end)
 end)
 
-Misc:AddToggle("Remove Fog",RemoveFog,function(value)
-RemoveFog = value
-if not RemoveFog then return end
-while RemoveFog do wait()
-game.Lighting.FogEnd = 9e9
-if not RemoveFog then
-game.Lighting.FogEnd = 2500
-end
-end
-end)
-
-Misc:AddButton("Unlock FPS",function()
+Misc:AddButton("Mở Khoá FPS",function()
 setfpscap(100)
 end)
 
-Misc:AddSeperator("ESP")
-
-Misc:AddToggle("ESP Player",false,function(value)
-ESPPlayer = value
-while ESPPlayer do wait()
-UpdateEspPlayer()
-end
-end)
-
-Misc:AddToggle("ESP Chest",false,function(value)
-ChestESP = value
-while ChestESP do wait()
-UpdateChestEsp()
-end
-end)
-
-Misc:AddToggle("ESP Fruit",false,function(value)
-DevilFruitESP = value
-while DevilFruitESP do wait()
-UpdateBfEsp()
-end
-end)
-
-Misc:AddToggle("ESP Flower",false,function(value)
-FlowerESP = value
-while FlowerESP do wait()
-UpdateFlowerEsp()
-end
-end)
-
-Misc:AddToggle("ESP Island",IslandESP,function(value)
-IslandESP = value
-while IslandESP do wait()
-UpdateIslandESP()
-end
-end)
-
 Misc:AddSeperator("Abilities")
-
-Misc:AddToggle("Dodge No Cooldown",false,function(value)
-nododgecool = value
-NoDodgeCool()
-end)
 
 Misc:AddToggle("Infinite Energy",false,function(value)
 InfiniteEnergy = value
@@ -6533,21 +6470,6 @@ game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
 end
 end
 end)
-end)
-
-Misc:AddToggle("Infinite Ability",false,function(value)
-InfAbility = value
-if value == false then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
-end
-end)
-
-spawn(function()
-while wait() do
-if InfAbility then
-InfAb()
-end
-end
 end)
 
 Misc:AddToggle("Infinite Obversation Range",getgenv().InfiniteObRange,function(value)
@@ -6595,7 +6517,94 @@ end)
 end
 end)
 
-Misc:AddToggle("Infinite Soru",getgenv().InfSoru,function(value)
+Misc:AddToggle("Khoá Vị Trí",false,function(value)
+Fly = value
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if Fly then
+fly()
+end
+end)
+end
+end)
+
+Vip:AddSeperator("Chức Năng Tộc")
+
+Vip:AddToggle("Tộc Thỏ V3 Chạy Nhanh",false,function(value)
+InfAbility = value
+if value == false then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
+end
+end)
+
+spawn(function()
+while wait() do
+if InfAbility then
+InfAb()
+end
+end
+end)
+
+Vip:AddButton("Tự Tử .Đang Thử Nghiệm",function()
+game:GetService("Players").LocalPlayer.Character.LowerTorso:Destroy()
+end)
+
+Vip:AddButton("Tốc Biến V2 Đang Thử Nghiệm",function()
+local plr = game:GetService("Players").LocalPlayer
+local mouse = plr:GetMouse()
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Teleport Tool"
+tool.Activated:Connect(function()
+local root = plr.Character.HumanoidRootPart
+local pos = mouse.Hit.Position+Vector3.new(0,5,0)
+local offset = pos-root.Position
+root.CFrame = root.CFrame+offset
+end)
+tool.Parent = plr.Backpack
+end)
+
+Vip:AddToggle("Auto Né Đang Test",false,function(value)
+nododgecool = value
+NoDodgeCool()
+end)
+
+Vip:AddToggle("Đi Trên Mặt Nước. Đang Test",_G.WalkWater,function(value)
+_G.WalkWater = value
+end)
+
+spawn(function()
+pcall(function()
+while wait() do
+if _G.WalkWater then
+if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y <= 1 then
+if not game:GetService("Workspace"):FindFirstChild("Water") then
+local Water = Instance.new("Part", game:GetService("Workspace"))
+Water.Name = "Water"
+Water.Size = Vector3.new(15,20,15)
+Water.Anchored = true
+Water.Material = "Neon"
+Water.Color = _G.Color
+game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
+else
+game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
+end
+elseif game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y >= 1 and game:GetService("Workspace"):FindFirstChild("Water") then
+game:GetService("Workspace"):FindFirstChild("Water"):Destroy()
+end
+else
+if game:GetService("Workspace"):FindFirstChild("Water") then
+game:GetService("Workspace"):FindFirstChild("Water"):Destroy()
+end
+end
+end
+end)
+end)
+
+Vip:AddToggle("Vô Hạn Soru.Đang Test",getgenv().InfSoru,function(value)
 getgenv().InfSoru = value
 end)
 
@@ -6621,49 +6630,61 @@ end)
 end
 end)
 
-Misc:AddToggle("Walk on Water",_G.WalkWater,function(value)
-_G.WalkWater = value
+Vip:AddToggle("Xoá Sương Mù",RemoveFog,function(value)
+RemoveFog = value
+if not RemoveFog then return end
+while RemoveFog do wait()
+game.Lighting.FogEnd = 9e9
+if not RemoveFog then
+game.Lighting.FogEnd = 2500
+end
+end
 end)
 
-spawn(function()
-pcall(function()
-while wait() do
-if _G.WalkWater then
-if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y <= 1 then
-if not game:GetService("Workspace"):FindFirstChild("Water") then
-local Water = Instance.new("Part", game:GetService("Workspace"))
-Water.Name = "Water"
-Water.Size = Vector3.new(15,0.5,15)
-Water.Anchored = true
-Water.Material = "Neon"
-Water.Color = _G.Color
-game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
-else
-game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
-end
-elseif game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y >= 1 and game:GetService("Workspace"):FindFirstChild("Water") then
-game:GetService("Workspace"):FindFirstChild("Water"):Destroy()
-end
-else
-if game:GetService("Workspace"):FindFirstChild("Water") then
-game:GetService("Workspace"):FindFirstChild("Water"):Destroy()
-end
-end
-end
-end)
+Vip:AddSeperator("Dịch Đến Team")
+
+Vip:AddButton("Team Hải Tặc",function()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates")
 end)
 
-Misc:AddToggle("Fly",false,function(value)
-Fly = value
+Vip:AddButton("Team Hải Quân",function()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
 end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if Fly then
-fly()
+Vip:AddSeperator("Định Vị")
+
+Vip:AddToggle("Định Vị Người Chơi",false,function(value)
+ESPPlayer = value
+while ESPPlayer do wait()
+UpdateEspPlayer()
 end
 end)
+
+Vip:AddToggle("Định Vị Rương",false,function(value)
+ChestESP = value
+while ChestESP do wait()
+UpdateChestEsp()
+end
+end)
+
+Vip:AddToggle("Định Vị Trái Ác Quỷ",false,function(value)
+DevilFruitESP = value
+while DevilFruitESP do wait()
+UpdateBfEsp()
+end
+end)
+
+Vip:AddToggle("Định Vị Hoa",false,function(value)
+FlowerESP = value
+while FlowerESP do wait()
+UpdateFlowerEsp()
+end
+end)
+
+Vip:AddToggle("Định Vị Đảo",IslandESP,function(value)
+IslandESP = value
+while IslandESP do wait()
+UpdateIslandESP()
 end
 end)
 end
