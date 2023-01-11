@@ -2774,7 +2774,7 @@ Main:AddToggle("Tự Động Dùng Thông Thạo Fruit Masyery",_G.AutoFarmFruit
 _G.AutoFarmFruitMastery = value
 StopTween(_G.AutoFarmFruitMastery)
 if _G.AutoFarmFruitMastery == false then
-UseSkill = true
+UseSkill = false
 end
 end)
 
@@ -2785,7 +2785,7 @@ pcall(function()
 local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
 if not string.find(QuestTitle, NameMon) then
 Magnet = false
-UseSkill = true
+UseSkill = false
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 end
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
@@ -2843,7 +2843,7 @@ end
 end
 else
 StartMasteryFruitMagnet = false
-UseSkill = true
+UseSkill = false
 local Mob = game:GetService("ReplicatedStorage"):FindFirstChild(Mon)
 if Mob then
 topos(Mob.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
@@ -2880,6 +2880,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
+_G.SkillZ = true
 end
 if _G.SkillX then
 local args = {
@@ -2888,6 +2889,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
+_G.SkillX = true
 end
 if _G.SkillC then
 local args = {
@@ -2897,6 +2899,7 @@ game:GetService("Players").LocalPlayer.Character[game:GetService("Players").Loca
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
 wait(2)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
+_G.SkillC = true
 end
 elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Venom-Venom") then
 if _G.SkillZ then
@@ -2906,6 +2909,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
+_G.SkillZ = true
 end
 if _G.SkillX then
 local args = {
@@ -2914,6 +2918,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
+_G.SkillX = true
 end
 if _G.SkillC then
 local args = {
@@ -2923,6 +2928,7 @@ game:GetService("Players").LocalPlayer.Character[game:GetService("Players").Loca
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
 wait(2)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
+_G.SkillC = true
 end
 elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Human-Human: Buddha") then
 if _G.SkillZ and game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Size == Vector3.new(2, 2.0199999809265, 1) then
@@ -2932,6 +2938,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
+_G.SkillZ = true
 end
 if _G.SkillX then
 local args = {
@@ -2940,6 +2947,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
+_G.SkillX = true
 end
 if _G.SkillC then
 local args = {
@@ -2948,6 +2956,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
+_G.SkillC = true
 end
 if _G.SkillV then
 local args = {
@@ -2956,6 +2965,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
+_G.SkillV = true
 end
 elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) then
 if _G.SkillZ then
@@ -2965,6 +2975,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
+_G.SkillZ = true
 end
 if _G.SkillX then
 local args = {
@@ -2973,6 +2984,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
+_G.SkillX = true
 end
 if _G.SkillC then
 local args = {
@@ -2981,6 +2993,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
+_G.SkillC = true
 end
 if _G.SkillV then
 local args = {
@@ -2989,6 +3002,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
+_G.SkillV = true
 end
 end
 end
