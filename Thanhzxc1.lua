@@ -3052,26 +3052,25 @@ end
 if  _G.x == true then
 game:GetService("VirtualInputManager"):SendKeyEvent(true,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-end
+end)
 if  _G.c == true then
 game:GetService("VirtualInputManager"):SendKeyEvent(true,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-end
+end)
 if  _G.v == true then
 game:GetService("VirtualInputManager"):SendKeyEvent(true,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end
-end
+end)
 function Click()
 game:GetService'VirtualUser':CaptureController()
 game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-end
+end)
 function EquipWeapon(ToolSe)
 if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
 local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
 wait(.1)
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
-end
 end
 end)
 
