@@ -3026,23 +3026,53 @@ end)
 end)
 
 _G.Kill_At = 25
-Main:AddToggle("Cày Thông Thạo  5%",5,100,25,function(value)
-_G.Kill_At = value
-end)
-
-_G.Kill_At = 25
-Main:AddToggle("Cày Thông Thạo  10%",10,100,25,function(value)
-_G.Kill_At = value
-end)
-
-_G.Kill_At = 25
-Main:AddToggle("Cày Thông Thạo  15%",15,100,25,function(value)
-_G.Kill_At = value
-end)
-
-_G.Kill_At = 25
 Main:AddToggle("Cày Thông Thạo  20%",20,100,25,function(value)
 _G.Kill_At = value
+end)
+
+Main:AddSeperator("Auto Skill")
+
+Main:AddToggle("Z",_G.z,function(t)
+_G.z = t
+end)
+Main:AddToggle("X",_G.x,function(t)
+_G.x = t
+end)
+Main:AddToggle("C",_G.c,function(t)
+_G.c = t
+end)
+Vip:AddToggle("V",_G.v,function(t)
+_G.v = t
+end)
+function autoskillheehee()
+if  _G.z == true then
+game:GetService("VirtualInputManager"):SendKeyEvent(true,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end
+if  _G.x == true then
+game:GetService("VirtualInputManager"):SendKeyEvent(true,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end
+if  _G.c == true then
+game:GetService("VirtualInputManager"):SendKeyEvent(true,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end
+if  _G.v == true then
+game:GetService("VirtualInputManager"):SendKeyEvent(true,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end
+end
+function Click()
+game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+end
+function EquipWeapon(ToolSe)
+if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
+local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
+wait(.1)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+end
+end
 end)
 
 Main:AddSeperator("Bosses")
@@ -6565,50 +6595,6 @@ end)
 Vip:AddButton("Team Hải Quân",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
 end)
-
-Vip:AddSeperator("Auto Skill")
-
-	Vip:AddToggle("Z",_G.z,function(t)
-		_G.z = t
-	end)
-	Vip:AddToggle("X",_G.x,function(t)
-		_G.x = t
-	end)
-	Vip:AddToggle("C",_G.c,function(t)
-		_G.c = t
-	end)
-	Vip:AddToggle("V",_G.v,function(t)
-		_G.v = t
-	end)
-	function autoskillheehee()
-		if  _G.z == true then
-			game:GetService("VirtualInputManager"):SendKeyEvent(true,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-			game:GetService("VirtualInputManager"):SendKeyEvent(false,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-		end
-		if  _G.x == true then
-			game:GetService("VirtualInputManager"):SendKeyEvent(true,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-			game:GetService("VirtualInputManager"):SendKeyEvent(false,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-		end
-		if  _G.c == true then
-			game:GetService("VirtualInputManager"):SendKeyEvent(true,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-			game:GetService("VirtualInputManager"):SendKeyEvent(false,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-		end
-		if  _G.v == true then
-			game:GetService("VirtualInputManager"):SendKeyEvent(true,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-			game:GetService("VirtualInputManager"):SendKeyEvent(false,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-		end
-	end
-	function Click()
-		game:GetService'VirtualUser':CaptureController()
-		game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-	end
-	function EquipWeapon(ToolSe)
-		if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
-			local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
-			wait(.1)
-			game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
-		end
-	end
 
 Vip:AddSeperator("Định Vị")
 
