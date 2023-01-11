@@ -2774,7 +2774,7 @@ Main:AddToggle("Tự Động Dùng Thông Thạo Fruit Masyery",_G.AutoFarmFruit
 _G.AutoFarmFruitMastery = value
 StopTween(_G.AutoFarmFruitMastery)
 if _G.AutoFarmFruitMastery == false then
-UseSkill = false
+UseSkill = true
 end
 end)
 
@@ -2785,7 +2785,7 @@ pcall(function()
 local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
 if not string.find(QuestTitle, NameMon) then
 Magnet = false
-UseSkill = false
+UseSkill = true
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 end
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
@@ -2843,7 +2843,7 @@ end
 end
 else
 StartMasteryFruitMagnet = false
-UseSkill = false
+UseSkill = true
 local Mob = game:GetService("ReplicatedStorage"):FindFirstChild(Mon)
 if Mob then
 topos(Mob.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
