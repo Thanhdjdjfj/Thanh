@@ -6566,6 +6566,50 @@ Vip:AddButton("Team Hải Quân",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
 end)
 
+Vip:Label("Auto Skill",0)
+
+	Vip:AddToggle("Z",_G.z,function(t)
+		_G.z = t
+	end)
+	Vip:AddToggle("X",_G.x,function(t)
+		_G.x = t
+	end)
+	Vip:AddToggle("C",_G.c,function(t)
+		_G.c = t
+	end)
+	Vip:AddToggle("V",_G.v,function(t)
+		_G.v = t
+	end)
+	function autoskillheehee()
+		if  _G.z == true then
+			game:GetService("VirtualInputManager"):SendKeyEvent(true,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+			game:GetService("VirtualInputManager"):SendKeyEvent(false,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+		end
+		if  _G.x == true then
+			game:GetService("VirtualInputManager"):SendKeyEvent(true,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+			game:GetService("VirtualInputManager"):SendKeyEvent(false,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+		end
+		if  _G.c == true then
+			game:GetService("VirtualInputManager"):SendKeyEvent(true,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+			game:GetService("VirtualInputManager"):SendKeyEvent(false,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+		end
+		if  _G.v == true then
+			game:GetService("VirtualInputManager"):SendKeyEvent(true,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+			game:GetService("VirtualInputManager"):SendKeyEvent(false,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+		end
+	end
+	function Click()
+		game:GetService'VirtualUser':CaptureController()
+		game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+	end
+	function EquipWeapon(ToolSe)
+		if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
+			local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
+			wait(.1)
+			game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+		end
+	end
+
 Vip:AddSeperator("Định Vị")
 
 Vip:AddToggle("Định Vị Người Chơi",false,function(value)
