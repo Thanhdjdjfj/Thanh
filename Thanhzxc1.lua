@@ -6566,7 +6566,7 @@ Vip:AddButton("Team Hải Quân",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
 end)
 
-Vip:Label("Auto Skill",0)
+Vip:AddSeperator("Auto Skill")
 
 	Vip:AddToggle("Z",_G.z,function(t)
 		_G.z = t
